@@ -1,0 +1,49 @@
+.table-container {
+    width: 90%;
+    margin: 50px auto 0; /* Ajusta el margen superior para mover la tabla hacia abajo */
+    overflow-y: auto;
+    border-radius: 16px;
+    background-color: #282c34;
+    color: white;
+    position: absolute;
+    top: 100px; /* Ajusta la distancia desde la parte superior de la página */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead {
+    background-color: #1678bd;
+  }
+  
+  th,
+  td {
+    border: 1px solid #444;
+    padding: 12px 16px;
+    text-align: left;
+  }
+  
+  th {
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center; /* Centra el texto de los titulares de columna */
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #24282f;
+  }
+  
+  td {
+    font-size: 14px;
+  }
+  
+  .no-data {
+    text-align: center;
+    padding: 20px;
+    background-color: #3a3f45;
+    font-weight: bold;
+  }
