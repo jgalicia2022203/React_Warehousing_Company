@@ -1,7 +1,10 @@
 import { useRef, useState } from "react";
-import Table from "./Table.jsx"
+import './tableStyle.css'
+import { FaRegEdit } from "react-icons/fa";
+import Table from "./Table.jsx";
 
-export default function TaskContainer(){
+
+export default function TaskContainer() {
     const columnsRef = useRef([
         {
             name: "id",
@@ -28,7 +31,7 @@ export default function TaskContainer(){
             type: "string"
         },
         {
-            name:"END DATE",
+            name: "END DATE",
             position: 4,
             isSelected: false,
             type: Date
@@ -41,19 +44,20 @@ export default function TaskContainer(){
         }
     ]);
 
-    const [rows, setRows] =useState([
+    const [rows, setRows] = useState([
         {
-            id:1,
+            id: 1,
             "TASK NAME": "React",
-            "DESCRIPTION":"lalalala",
-            "CREATOR NAME":"lalala",
-            "END DATE":"12/05/2024",
-            "OPTIONS":"",
-
+            "DESCRIPTION": "lalalala",
+            "CREATOR NAME": "lalala",
+            "END DATE": "12/05/2024",
+            "OPTIONS": <button className="custom-button">
+                <FaRegEdit />
+            </button>
         }
-    ])
+    ]);
 
-    return(
+    return (
         <div className="flex flex-col gap-3">
             <Table
                 columns={columnsRef.current}
