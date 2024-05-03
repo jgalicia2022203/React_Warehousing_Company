@@ -1,13 +1,8 @@
 import { useState } from 'react';
 import { useTask } from '../shared/hooks';
 import { Input } from "./Input" 
-import {
-    validateNameCreatorMessage,
-    validateNameMessage,
-    validateUsername,
-    descriptionValidationMessage
 
-  } from "../shared/validators";
+import { addTask } from '../services';
 
 
 
@@ -161,3 +156,4 @@ export const AddTask = () => {
         </div>
     );
 }
+export default addTask;

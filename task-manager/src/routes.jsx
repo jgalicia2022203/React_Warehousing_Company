@@ -1,9 +1,7 @@
-import { DashboardPage } from "./pages/dashboard";
-import { AuthPage } from "./pages/auth";
+import { AddTask } from "./components/AddTasks.jsx";
 
 const routes = [
-    {path: '/auth', element: <AuthPage/>},
-    {path: '/*', element: <DashboardPage/>}
+    {path: '/*', element: <AddTask/>}
 ]
 
 export default routes

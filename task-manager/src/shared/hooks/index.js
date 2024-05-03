@@ -1,2 +1,2 @@
-export { useTasks } from './useTask'
+export { useTask } from './useTask'
 export { useTasks } from './useTasks'
