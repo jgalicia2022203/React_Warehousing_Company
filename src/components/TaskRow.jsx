@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { IconButton, TableCell, TableRow, Tooltip } from "@mui/material";
 import { useState } from "react";
 import EditTaskForm from "./EditForm";
-const TaskRow = ({ task, onComplete, onEdit }) => {
+const TaskRow = ({ task, onComplete, onEdit, onDelete }) => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const handleOpenEditModal = () => {
@@ -22,6 +23,12 @@ const TaskRow = ({ task, onComplete, onEdit }) => {
 
   const handleComplete = () => {
     onComplete(task._id);
+  };
+
+  const handleDelete = () => {
+    if (window.confirm("Are you sure you want to delete this task?")) {
+      onDelete(task._id);
+    }
   };
 
   return (
@@ -49,6 +56,11 @@ const TaskRow = ({ task, onComplete, onEdit }) => {
           onClose={handleCloseEditModal}
           onSave={handleSaveChanges}
         />
+        <Tooltip title="Delete Task">
+          <IconButton onClick={handleDelete} aria-label="delete">
+            <DeleteIcon />
+          </IconButton>
+        </Tooltip>
       </TableCell>
     </TableRow>
   );

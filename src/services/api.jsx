@@ -56,3 +56,12 @@ export const completeTask = async (taskId, enqueueSnackbar) => {
     handleError(e, enqueueSnackbar);
   }
 };
+
+export const deleteTask = async (taskId, enqueueSnackbar) => {
+  try {
+    await apiClient.delete(`/tasks/${taskId}`);
+    enqueueSnackbar("Task deleted successfully!", { variant: "success" });
+  } catch (e) {
+    handleError(e, enqueueSnackbar);
+  }
+};

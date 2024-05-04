@@ -8,6 +8,7 @@ import {
   createTask,
   fetchTasks,
   updateTask,
+  deleteTask,
 } from "../services/api";
 
 const HomePage = () => {
@@ -64,6 +65,15 @@ const HomePage = () => {
     }
   };
 
+  const handleDeleteTask = async (taskId) => {
+    try {
+      await deleteTask(taskId, enqueueSnackbar);
+      setTasks((prevTasks) => prevTasks.filter((task) => task._id !== taskId));
+    } catch (error) {
+      console.error("Error al eliminar la tarea:", error);
+    }
+  };
+
   return (
     <Container maxWidth="lg">
       <Typography variant="h4" gutterBottom></Typography>
@@ -76,6 +86,7 @@ const HomePage = () => {
             tasks={tasks}
             onEdit={handleEditTask}
             onComplete={handleCompleteTask}
+            onDelete={handleDeleteTask}
           />
         </Grid>
       </Grid>
