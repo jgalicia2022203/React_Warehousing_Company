@@ -42,6 +42,7 @@ const HomePage = () => {
 
   const handleEditTask = async (taskId, taskDetails) => {
     try {
+      console.log({taskId, taskDetails})
       const response = await updateTask(taskId, taskDetails, enqueueSnackbar);
       const updatedTask = response.updatedTask;
       console.log("Tarea actualizada recibida del backend:", updatedTask);

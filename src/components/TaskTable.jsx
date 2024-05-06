@@ -43,7 +43,7 @@ const TaskTable = ({ tasks, onEdit, onDelete, onComplete }) => {
             <TaskRow
               key={task._id}
               task={task}
-              onEdit={() => onEdit(task._id)}
+              onEdit={(_, taskDetails) => onEdit(task._id, taskDetails)}
               onDelete={() => onDelete(task._id)}
               onComplete={() => onComplete(task._id)}
             />
